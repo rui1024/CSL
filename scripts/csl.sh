@@ -9,7 +9,7 @@ export CUDA_VISIBLE_DEVICES=0
 dataset='pascal'
 method='CSL'
 exp='r101'
-split='1_4'
+split='1_16'
 
 config=configs/${dataset}.yaml
 labeled_id_path=splits/$dataset/$split/labeled.txt
@@ -18,5 +18,5 @@ val_id_path=splits/$dataset/val.txt
 save_path=exp/$dataset/$method/$exp/$split
 
 mkdir -p $save_path
-python $method.py --config=$config --labeled_id_path $labeled_id_path --unlabeled_id_path $unlabeled_id_path \
+uv run $method.py --config=$config --labeled_id_path $labeled_id_path --unlabeled_id_path $unlabeled_id_path \
     --val_id_path $val_id_path --save_path $save_path
