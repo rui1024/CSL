@@ -1,0 +1,52 @@
+[project]
+name = "csl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Richard", email = "ruixu1024@gmail.com" }
+]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "absl-py==2.3.0",
+    "astunparse==1.6.3",
+    "dnspython==2.6.1",
+    "expecttest==0.2.1",
+    "fsspec==2024.6.1",
+    "grpcio==1.73.1",
+    "hypothesis==6.108.4",
+    "jsonpointer==2.1",
+    "lintrunner==0.12.5",
+    "markdown==3.8.2",
+    "ninja==1.11.1.1",
+    "optree==0.12.1",
+    "protobuf==6.31.1",
+    "python-etcd==0.4.5",
+    "sortedcontainers==2.4.0",
+    "tensorboard==2.19.0",
+    "tensorboard-data-server==0.7.2",
+    "torch==2.4.0",
+    "torchaudio==2.4.0",
+    "torchvision==0.19.0",
+    "types-dataclasses==0.6.6",
+    "werkzeug==3.1.3",
+]
+
+[project.scripts]
+csl = "csl:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+# 配置 PyTorch 的专用源，explicit = true 表示这个源只用来找指定的包，不干扰其他包的查找
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+# 将 torch 系列包指向 pytorch 源
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchvision = { index = "pytorch" }
+torchaudio = { index = "pytorch" }

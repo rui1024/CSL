@@ -9,7 +9,7 @@ accumulate_grad_batches: 1
 
 dataset:
   name: *name
-  root: /workspace/data/Pascal
+  root: /home/xr/projects/phd_code/data/VOC2012
   crop_size: *crop_size
   cover_radio: 0.7
   block_size : 32
