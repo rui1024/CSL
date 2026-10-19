@@ -1,11 +1,11 @@
 nclass: &nclass 21
-crop_size: &crop_size 321
+crop_size: &crop_size 513
 name: &name pascal
 
 epochs: 80
-batch_size: 8
+batch_size: 4
 gpu_num: 1
-accumulate_grad_batches: 1
+accumulate_grad_batches: 2
 
 dataset:
   name: *name
