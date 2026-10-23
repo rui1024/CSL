@@ -22,7 +22,7 @@ def main():
 
     logger = TensorBoardLogger(save_dir=args.save_path, version=1, name="logs")
 
-    pl.seed_everything(42, workers=True)
+    pl.seed_everything(0, workers=True)
     
     model = ModelBuilder(cfg['model'])
     

@@ -9,7 +9,7 @@ export CUDA_VISIBLE_DEVICES=0
 dataset='pascal'
 method='CSL'
 exp='r101'
-split='1_16'
+split='92'
 
 config=configs/${dataset}.yaml
 labeled_id_path=splits/$dataset/$split/labeled.txt
